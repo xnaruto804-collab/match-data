@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CricZone API — Live Cricket</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">cric<span>zone</span></a>
+    <div class="header-note">CRICKET DATA API DEMO</div>
+    <button id="refresh" class="refresh">Refresh</button>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">YOUR CRICKET CENTRE</p>
+      <h1>Every match.<br><span>One place.</span></h1>
+      <p class="sub">A demo client for your own CricZone API. Live data depends on your configured provider key and its plan.</p>
+      <div class="status"><span id="statusDot"></span><span id="statusText">Connecting to API…</span><span id="updated"></span></div>
+    </section>
+    <section class="toolbar">
+      <div>
+        <p class="eyebrow">MATCH CENTRE</p>
+        <h2>Live scores</h2>
+      </div>
+      <label class="filter">Show
+        <select id="state">
+          <option value="in">Live now</option>
+          <option value="pre">Upcoming today</option>
+          <option value="post">Finished today</option>
+          <option value="all">All today</option>
+        </select>
+      </label>
+    </section>
+    <div id="matches" class="matches">
+      <div class="empty">Loading match data…</div>
+    </div>
+    <section class="api-info">
+      <div><p class="eyebrow">API ENDPOINT</p><code>GET /api/live?state=in</code></div>
+      <button id="copyEndpoint" class="copy">Copy URL</button>
+    </section>
+    <section class="resource-grid">
+      <article><span class="resource-icon">▤</span><h3>Fixtures & results</h3><p>Browse matches by competition, team, format or date.</p><code>/api/matches</code></article>
+      <article><span class="resource-icon">▥</span><h3>Scorecards</h3><p>Batting, bowling, dismissals and innings details.</p><code>/api/matches/:id/scorecard</code></article>
+      <article><span class="resource-icon">◉</span><h3>Players & teams</h3><p>Search profiles and explore competitions.</p><code>/api/search?q=kohli</code></article>
+    </section>
+    <p class="footnote">Data source: OpenCricket API. Historical ball-by-ball data is attributed to Cricsheet where applicable. This demo does not fabricate scores or commentary.</p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
